@@ -1,3 +1,4 @@
+import org.example.Plot.Plot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,14 @@ public class PlotsTests {
         _driver.findElement(By.id("user-name")).sendKeys("problem_user");
         _driver.findElement(By.id("password")).sendKeys("secret_sauce");
         _driver.findElement(By.id("login-button")).click();
+    }
+
+    @Test
+    public void test1(){
+
+        Plot plot = new Plot();
+        plot.fillAd();
+
     }
 
 

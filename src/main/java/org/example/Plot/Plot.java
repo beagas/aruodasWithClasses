@@ -8,7 +8,8 @@ public class Plot {
     String address;
     String rcNo;
 
-    public void fillAD(){
+    public void fillAd(){
+        _driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=2");
 
     }
 
