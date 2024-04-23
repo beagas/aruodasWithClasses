@@ -1,38 +1,33 @@
-import org.example.Plot.Plot;
-import org.openqa.selenium.By;
+import org.example.models.Plot;
+import org.example.models.Utils;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class PlotsTests {
-    public static WebDriver _driver;
+
     public static WebDriverWait _wait;
+    //public static WebDriver _driver;
 
     @BeforeClass
     public void SetupWebDriver() {
         ChromeOptions options = new ChromeOptions();
-        _driver = new ChromeDriver();
         options.addArguments("--start-maximized");
-        _driver.get("https://www.saucedemo.com/");
-        _driver.findElement(By.id("user-name")).sendKeys("problem_user");
-        _driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        _driver.findElement(By.id("login-button")).click();
+        Utils._driver = new ChromeDriver();
+        Utils._driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
     }
 
     @Test
     public void test1(){
-
-        Plot plot = new Plot();
-        plot.fillAd();
-
+        Plot address = new Plot("Vilnius", "Vilniaus m.", "Antaklanis", "A. Goštauto g.", "14","315616161594");
+        address.fillAd();
+        Assert.assertEquals(true,true);
     }
 
 
