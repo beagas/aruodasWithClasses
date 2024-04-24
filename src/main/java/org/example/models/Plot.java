@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class Plot {
     String region;
     String district;
@@ -38,7 +40,7 @@ public class Plot {
     }
     public void fillRegion(){
         Utils._driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[3]/span[1]/span")).click();
-        List <WebElement> districts = Utils._driver.findElement(By.id("regionDropdown")).findElements(By.tagName("li"));
+        List<WebElement> districts = Utils._driver.findElement(By.id("regionDropdown")).findElements(By.tagName("li"));
         for (WebElement district:districts) {
             System.out.println(district.getText());
         }
