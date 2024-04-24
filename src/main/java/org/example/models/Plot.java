@@ -56,7 +56,7 @@ public class Plot {
     }
     public void fillDistrict(){
         Utils._driver.findElement(By.xpath("//*[@id=\"district\"]/span")).click();
-        List<WebElement> districts = Utils._driver.findElement(By.className("dropdown-input-values-address")).get(1).findElements(By.tagName("li"));
+        List<WebElement> districts = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(1).findElements(By.tagName("li"));
         Utils._driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);
         for (WebElement district:districts) {
             if(district.getText().contains(this.district)){
