@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class PlotsTests {
@@ -19,7 +20,7 @@ public class PlotsTests {
         options.addArguments("--start-maximized");
         Utils._driver = new ChromeDriver();
         Utils._driver.manage().window().maximize();
-        //s
+        Utils._driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @Test
