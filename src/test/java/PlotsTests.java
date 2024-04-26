@@ -24,13 +24,23 @@ public class PlotsTests {
 
     @Test
     public void test1(){
-        Plot address = new Plot("Ignalinos r.", "Dūkšto m.", "Antaklanis", "A. Goštauto g.", "14","315616161594");
+        Plot address = new Plot("Ignalinos r.", "Abugalių k.", "Antaklanis", "A. Goštauto g.", "14","315616161594");
         address.fillAd();
         Assert.assertEquals(true,true);
     }
 
+    @Test
+    public void test2(){
+        Plot address = new Plot("Vilnius", "Bajorų k.", "Antaklanis", "A. Goštauto g.", "14","315616161594");
+        address.fillAd();
+        Assert.assertEquals(true,true);
+    }
 
-
-
+    @Test
+    public void test3(){
+        Plot address = new Plot("Šiauliai", "Šiaulių m.", "Centras", "Agrastų g.", "14","315616161594");
+        address.fillAd();
+        Assert.assertEquals(true,true);
+    }
 
 }
