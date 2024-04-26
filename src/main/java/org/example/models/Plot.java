@@ -56,7 +56,7 @@ public class Plot {
     }
     public void fillDistrict(){
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -71,18 +71,11 @@ public class Plot {
         }
     }
     public void fillQuartal(){
-//        try {
-//            TimeUnit.SECONDS.sleep(2);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        if (Utils._driver.findElement(By.id("quartalField")).getAttribute("class").contains("field-disabled")) {
+            return;
+        }
         Utils._driver.findElement(By.xpath("//*[@id=\"quartalField\"]/span[1]/span[2]")).click();
-//        try {
-//            TimeUnit.SECONDS.sleep(2);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         List<WebElement> quartals = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(2).findElements(By.tagName("li"));
         for (WebElement quartal:quartals) {
@@ -94,18 +87,11 @@ public class Plot {
         }
     }
     public void fillStreet(){
-//        try {
-//            TimeUnit.SECONDS.sleep(2);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        if (Utils._driver.findElement(By.id("streetField")).getAttribute("class").contains("hide")) {
+            return;
+        }
         Utils._driver.findElement(By.xpath("//*[@id=\"streetField\"]/span[1]/span[2]")).click();
-//        try {
-//            TimeUnit.SECONDS.sleep(2);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         List<WebElement> streets = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(3).findElements(By.tagName("li"));
         for (WebElement street:streets) {
