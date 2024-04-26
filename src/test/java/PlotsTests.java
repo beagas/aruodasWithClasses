@@ -18,12 +18,13 @@ public class PlotsTests {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         Utils._driver = new ChromeDriver();
+        Utils._driver.manage().window().maximize();
         //Utils._driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
     }
 
     @Test
     public void test1(){
-        Plot address = new Plot("Akmenės r.", "Akmenės m.", "Antaklanis", "A. Goštauto g.", "14","315616161594");
+        Plot address = new Plot("Ignalinos r.", "Dūkšto m.", "Antaklanis", "A. Goštauto g.", "14","315616161594");
         address.fillAd();
         Assert.assertEquals(true,true);
     }
