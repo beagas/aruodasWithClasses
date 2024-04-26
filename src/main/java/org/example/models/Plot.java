@@ -44,7 +44,7 @@ public class Plot {
         fillHouseNo();
     }
     public void fillRegion(){
-        Utils._driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[3]/span[1]/span")).click();
+        Utils._driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[3]/span[1]/span")).click();
         List<WebElement> regions = Utils._driver.findElement(By.id("regionDropdown")).findElements(By.tagName("li"));
         Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         for (WebElement region:regions) {
@@ -71,18 +71,20 @@ public class Plot {
         }
     }
     public void fillQuartal(){
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            TimeUnit.SECONDS.sleep(2);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         Utils._driver.findElement(By.xpath("//*[@id=\"quartalField\"]/span[1]/span[2]")).click();
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        List<WebElement> quartals = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(1).findElements(By.tagName("li"));
+//        try {
+//            TimeUnit.SECONDS.sleep(2);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        List<WebElement> quartals = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(2).findElements(By.tagName("li"));
         for (WebElement quartal:quartals) {
             System.out.println(quartal.getText());
             if (quartal.getText().toLowerCase().contains(this.quartal)){
@@ -92,6 +94,27 @@ public class Plot {
         }
     }
     public void fillStreet(){
+//        try {
+//            TimeUnit.SECONDS.sleep(2);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        Utils._driver.findElement(By.xpath("//*[@id=\"streetField\"]/span[1]/span[2]")).click();
+//        try {
+//            TimeUnit.SECONDS.sleep(2);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        List<WebElement> streets = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(3).findElements(By.tagName("li"));
+        for (WebElement street:streets) {
+            System.out.println(street.getText());
+            if (street.getText().toLowerCase().contains(this.street)){
+                street.click();
+                break;
+            }
+        }
     }
     public void fillHouseNo(){
         Utils._driver.findElement(By.name("FHouseNum")).sendKeys(this.address);
