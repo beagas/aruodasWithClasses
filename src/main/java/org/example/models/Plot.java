@@ -105,7 +105,7 @@ public class Plot {
             return;
         }else {
             Utils._driver.findElement(By.xpath("//*[@id=\"streetField\"]/span[1]/span[2]")).click();
-            Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            Utils._driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             List<WebElement> streets = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(3).findElements(By.tagName("li"));
             for (WebElement street : streets) {
                 System.out.println(street.getText());
