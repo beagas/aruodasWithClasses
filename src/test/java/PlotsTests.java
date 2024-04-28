@@ -32,14 +32,14 @@ public class PlotsTests {
 
     @Test
     public void test2(){
-        Plot address = new Plot("Vilnius", "Bajorų k.", "Antaklanis", "A. Goštauto g.", "14","315616161594");
+        Plot address = new Plot("Vilnius", "Vilniaus m.", "Antakalnis", "A. Goštauto g.", "14","315616161594");
         address.fillAd();
         Assert.assertEquals(true,true);
     }
 
     @Test
     public void test3(){
-        Plot address = new Plot("Šiauliai", "Šiaulių m.", "Centras", "Agrastų g.", "14","315616161594");
+        Plot address = new Plot("Šiauliai", "Žaliūkių k.", "", "Andrijavos g.", "14","315616161594");
         address.fillAd();
         Assert.assertEquals(true,true);
     }
