@@ -14,6 +14,10 @@ public class Plot {
     String address;
     String RCNo;
     int streetFieldNo = 3;
+    String one = "1";
+    String two = "2";
+   String area;
+    String noOfFloors;
 
     public Plot(String region, String district, String quartal, String street, String address, String RCNo) {
         this.region = region;
@@ -22,14 +26,20 @@ public class Plot {
         this.street = street.toLowerCase();
         this.address = address;
         this.RCNo = RCNo;
+
     }
 
+    public houseDetails(String area, String noOfFloors) {
+        this.area = area;
+        this.noOfFloors = noOfFloors;
+    }
 
     public void fillAd() {
         Utils._driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=2");
         Utils.snoozeUntilElement(By.id("onetrust-accept-btn-handler")).click();
         fillAddress();
         fillRcNo();
+        fillHouseType();
     }
 
     public void fillAddress(){
@@ -39,6 +49,16 @@ public class Plot {
         fillStreet();
         fillHouseNo();
     }
+
+    public void fillHouseType() {
+        fillArea();
+        fillNoOfFloors();
+    }
+
+    public void fillHeating(){
+
+    }
+
     public void fillRegion(){
         Utils._driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[3]/span[1]/span")).click();
         List<WebElement> regions = Utils._driver.findElement(By.id("regionDropdown")).findElements(By.tagName("li"));
@@ -123,6 +143,18 @@ public class Plot {
     public void fillRcNo() {
         Utils._driver.findElement(By.name("RCNumber")).sendKeys(this.RCNo);
     }
+    public void fillArea(){
+        Utils._driver.findElement(By.id("fieldFAreaOverAll")).sendKeys(this.area);
+    }
 
+    public void fillNoOfFloors() {
+//        if (this.noOfFloors.equals(one)) {
+//            Utils._driver.findElements(By.className("input-button")).get(2).click();
+//        }
+//        if (this.noOfFloors.equals(two)) {
+//            Utils._driver.findElements(By.className("input-button")).get(3).click();
+//        }
+            Utils._driver.findElements(By.className("input-style-text-unit")).get(1).sendKeys(this.noOfFloors);
 
+    }
 }
