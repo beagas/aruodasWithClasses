@@ -14,10 +14,7 @@ public class Plot {
     String address;
     String RCNo;
     int streetFieldNo = 3;
-    String one = "1";
-    String two = "2";
-   String area;
-    String noOfFloors;
+
 
     public Plot(String region, String district, String quartal, String street, String address, String RCNo) {
         this.region = region;
@@ -29,20 +26,14 @@ public class Plot {
 
     }
 
-    public houseDetails(String area, String noOfFloors) {
-        this.area = area;
-        this.noOfFloors = noOfFloors;
-    }
-
     public void fillAd() {
         Utils._driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=2");
         Utils.snoozeUntilElement(By.id("onetrust-accept-btn-handler")).click();
         fillAddress();
         fillRcNo();
-        fillHouseType();
     }
 
-    public void fillAddress(){
+    public void fillAddress() {
         fillRegion();
         fillDistrict();
         fillQuartal();
@@ -50,27 +41,20 @@ public class Plot {
         fillHouseNo();
     }
 
-    public void fillHouseType() {
-        fillArea();
-        fillNoOfFloors();
-    }
 
-    public void fillHeating(){
-
-    }
-
-    public void fillRegion(){
+    public void fillRegion() {
         Utils._driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[3]/span[1]/span")).click();
         List<WebElement> regions = Utils._driver.findElement(By.id("regionDropdown")).findElements(By.tagName("li"));
         Utils._driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        for (WebElement region:regions) {
-            if(region.getText().contains(this.region)){
+        for (WebElement region : regions) {
+            if (region.getText().contains(this.region)) {
                 region.click();
                 break;
             }
         }
     }
-    public void fillDistrict(){
+
+    public void fillDistrict() {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
@@ -78,14 +62,15 @@ public class Plot {
         }
         Utils._driver.findElement(By.xpath("//*[@id=\"district\"]/span")).click();
         Utils.snoozeUntilElement(By.className("dropdown-input-values-address"));
-        List<WebElement> districts =  Utils._driver.findElements(By.className("dropdown-input-values-address")).get(1).findElements(By.tagName("li"));
-        for (WebElement district:districts) {
-            if (district.getText().toLowerCase().contains(this.district)){
+        List<WebElement> districts = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(1).findElements(By.tagName("li"));
+        for (WebElement district : districts) {
+            if (district.getText().toLowerCase().contains(this.district)) {
                 district.click();
                 break;
             }
         }
     }
+
     public void fillQuartal() {
         try {
             TimeUnit.SECONDS.sleep(1);
@@ -112,7 +97,8 @@ public class Plot {
             }
         }
     }
-    public void fillStreet(){
+
+    public void fillStreet() {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
@@ -120,7 +106,7 @@ public class Plot {
         }
         if (Utils._driver.findElement(By.id("streetField")).getAttribute("class").contains("field-disabled")) {
             return;
-        }else {
+        } else {
             Utils._driver.findElement(By.xpath("//*[@id=\"streetField\"]/span[1]/span[2]")).click();
             try {
                 TimeUnit.SECONDS.sleep(1);
@@ -137,17 +123,36 @@ public class Plot {
             }
         }
     }
-    public void fillHouseNo(){
+
+    public void fillHouseNo() {
         Utils._driver.findElement(By.name("FHouseNum")).sendKeys(this.address);
     }
+
     public void fillRcNo() {
         Utils._driver.findElement(By.name("RCNumber")).sendKeys(this.RCNo);
     }
-    public void fillArea(){
-        Utils._driver.findElement(By.id("fieldFAreaOverAll")).sendKeys(this.area);
-    }
+}
+    public class HouseDetails {
+        String one = "1";
+        String two = "2";
+        String area;
+        String noOfFloors;
 
-    public void fillNoOfFloors() {
+        public HouseDetails(String area, String noOfFloors) {
+            this.area = area;
+            this.noOfFloors = noOfFloors;
+        }
+
+        public void fillHouseType() {
+            fillArea();
+            fillNoOfFloors();
+        }
+
+        public void fillArea() {
+            Utils._driver.findElement(By.id("fieldFAreaOverAll")).sendKeys(this.area);
+        }
+
+        public void fillNoOfFloors() {
 //        if (this.noOfFloors.equals(one)) {
 //            Utils._driver.findElements(By.className("input-button")).get(2).click();
 //        }
@@ -156,5 +161,6 @@ public class Plot {
 //        }
             Utils._driver.findElements(By.className("input-style-text-unit")).get(1).sendKeys(this.noOfFloors);
 
+        }
     }
-}
+

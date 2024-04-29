@@ -26,7 +26,7 @@ public class PlotsTests {
     @Test
     public void test1(){
         Plot address = new Plot("Ignalinos r.", "Abugalių k.", "", "",
-                "14","315616161594", "69", "2");
+                "14","315616161594");
         address.fillAd();
         Assert.assertEquals(true,true);
     }
@@ -34,16 +34,17 @@ public class PlotsTests {
     @Test
     public void test2(){
         Plot address = new Plot("Vilnius", "Vilniaus m.", "Antakalnis", "A. Goštauto g.",
-                "14","315616161594", "69", "1");
+                "14","315616161594");
         address.fillAd();
-        houseDetails house = new
+        Plot.HouseDetails house = new Plot.HouseDetails("69", "1");
+        house.fillHouseType();
         Assert.assertEquals(true,true);
     }
 
     @Test
     public void test3(){
         Plot address = new Plot("Šiauliai", "Žaliūkių k.", "", "Andrijavos g.",
-                "14","315616161594", "69", "5");
+                "14","315616161594");
         address.fillAd();
         Assert.assertEquals(true,true);
     }
