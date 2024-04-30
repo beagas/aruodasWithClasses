@@ -1,3 +1,4 @@
+import org.example.models.HouseDetails;
 import org.example.models.Plot;
 import org.example.models.Utils;
 import org.openqa.selenium.By;
@@ -36,8 +37,12 @@ public class PlotsTests {
         Plot address = new Plot("Vilnius", "Vilniaus m.", "Antakalnis", "A. Goštauto g.",
                 "14","315616161594");
         address.fillAd();
-//        Plot.HouseDetails house = new Plot.HouseDetails("69", "1");
-//        house.fillHouseType();
+
+        HouseDetails house = new HouseDetails("69","1","5","1969","2000",
+                "Namo dalis", "Blokinis", "Įrengtas", "Elektra, Skystu kuru");
+        house.fillHouseDetails();
+
+
         Assert.assertEquals(true,true);
     }
 

@@ -87,7 +87,6 @@ public class Plot {
             }
             List<WebElement> quartals = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(2).findElements(By.tagName("li"));
             for (WebElement quartal : quartals) {
-                System.out.println(quartal.getText());
                 if (quartal.getText().toLowerCase().contains(this.quartal)) {
                     quartal.click();
                     break;
@@ -113,7 +112,6 @@ public class Plot {
             }
             List<WebElement> streets = Utils._driver.findElements(By.className("dropdown-input-values-address")).get(streetFieldNo).findElements(By.tagName("li"));
             for (WebElement street : streets) {
-                System.out.println(street.getText());
                 if (street.getText().toLowerCase().contains(this.street)) {
                     street.click();
                     break;
