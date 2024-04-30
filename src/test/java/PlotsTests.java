@@ -39,7 +39,7 @@ public class PlotsTests {
         address.fillAd();
 
         HouseDetails house = new HouseDetails("69","1","5","1969","2000",
-                "Namo dalis", "Blokinis", "Įrengtas", "Elektra, Skystu kuru");
+                "Namo dalis", "Blokinis", "Įrengtas", "Elektra, Skystu kuru, Geoterminis");
         house.fillHouseDetails();
 
 

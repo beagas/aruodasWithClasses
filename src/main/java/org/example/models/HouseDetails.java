@@ -108,8 +108,7 @@ public class HouseDetails {
     public void fillHeating(){
         List<WebElement> types = Utils._driver.findElements(By.className("input-style-checkbox")).get(5).findElements(By.tagName("div"));
         for (WebElement type:types){
-            System.out.println(type.getText());
-            if(type.getText().contains(this.heating)){
+            if(this.heating.contains(type.getText())){
                 type.click();
                 continue;
             }
