@@ -78,7 +78,6 @@ public class HouseDetails {
     public void fillBuildingType(){
         List<WebElement> types = Utils._driver.findElements(By.className("input-buttons-wrapper")).get(1).findElements(By.tagName("div"));
         for (WebElement type:types){
-                System.out.println(type.getText());
             if(type.getText().contains(this.buildingType)){
                 type.click();
                 break;
@@ -89,7 +88,6 @@ public class HouseDetails {
     public void fillHouseType(){
         List<WebElement> types = Utils._driver.findElements(By.className("input-buttons-wrapper")).get(2).findElements(By.tagName("div"));
         for (WebElement type:types){
-            System.out.println(type.getText());
             if(type.getText().contains(this.houseType)){
                 type.click();
                 break;
@@ -100,7 +98,6 @@ public class HouseDetails {
     public void fillEquipment(){
         List<WebElement> types = Utils._driver.findElements(By.className("input-buttons-wrapper")).get(3).findElements(By.tagName("div"));
         for (WebElement type:types){
-            System.out.println(type.getText());
             if(type.getText().contains(this.equipment)){
                 type.click();
                 break;
