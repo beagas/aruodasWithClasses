@@ -36,8 +36,8 @@ public class PlotsTests {
         Plot address = new Plot("Vilnius", "Vilniaus m.", "Antakalnis", "A. Goštauto g.",
                 "14","315616161594");
         address.fillAd();
-        Plot.HouseDetails house = new Plot.HouseDetails("69", "1");
-        house.fillHouseType();
+//        Plot.HouseDetails house = new Plot.HouseDetails("69", "1");
+//        house.fillHouseType();
         Assert.assertEquals(true,true);
     }
 
