@@ -42,8 +42,9 @@ public class PlotsTests {
                 "Namo dalis", "Blokinis", "Įrengtas", "Elektra, Skystu kuru, Geoterminis");
         house.fillHouseDetails();
 
-
         Assert.assertEquals(true,true);
+
+
     }
 
     @Test
