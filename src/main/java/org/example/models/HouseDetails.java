@@ -43,6 +43,7 @@ public class HouseDetails {
         fillHouseType();
         fillEquipment();
         fillHeating();
+        fillPhotos();
     }
 
     public void fillArea() {
@@ -115,6 +116,10 @@ public class HouseDetails {
         }
     }
 
+
+    public void fillPhotos(){
+        Utils._driver.findElement(By.id("uploadPhotoBtn")).sendKeys("C:\\Users\\Beatrice\\Desktop\\house.jpg");
+    }
 
 
 
