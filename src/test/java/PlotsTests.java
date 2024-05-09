@@ -1,3 +1,4 @@
+import org.example.models.Contacts;
 import org.example.models.HouseDetails;
 import org.example.models.Plot;
 import org.example.models.Utils;
@@ -41,6 +42,9 @@ public class PlotsTests {
         HouseDetails house = new HouseDetails("69","1","5","1969","2000",
                 "Namo dalis", "Blokinis", "Įrengtas", "Elektra, Skystu kuru, Geoterminis");
         house.fillHouseDetails();
+
+        Contacts cont = new Contacts("420000","61234567","agrdafgra@gmail.com");
+        cont.fillContacts();
 
         Assert.assertEquals(true,true);
 

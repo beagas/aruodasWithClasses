@@ -118,7 +118,7 @@ public class HouseDetails {
 
 
     public void fillPhotos(){
-        Utils._driver.findElement(By.id("uploadPhotoBtn")).sendKeys("C:\\Users\\Beatrice\\Desktop\\3.jpg");
+        Utils._driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[46]/div/div[1]/a")).sendKeys("C:\\Users\\Beatrice\\Desktop\\3.jpg");
     }
 
 
