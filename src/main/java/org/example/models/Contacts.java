@@ -17,7 +17,7 @@ public class Contacts {
         fillPrice();
         fillPhoneNr();
         fillEmail();
-        fillTicks();
+        fillTicks();//agree with terms and conditions
     }
 
     public void fillPrice() {
