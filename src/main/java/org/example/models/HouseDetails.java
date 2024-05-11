@@ -43,7 +43,7 @@ public class HouseDetails {
         fillHouseType();
         fillEquipment();
         fillHeating();
-        fillPhotos();
+        fillPhotos();//fill in photos
     }
 
     public void fillArea() {
