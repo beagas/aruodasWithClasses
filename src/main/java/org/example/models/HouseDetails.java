@@ -1,12 +1,7 @@
 package org.example.models;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class HouseDetails {
     String one = "1";
@@ -43,7 +38,7 @@ public class HouseDetails {
         fillHouseType();
         fillEquipment();
         fillHeating();
-        fillPhotos();//
+        fillPhotos();
     }
 
     public void fillArea() {
