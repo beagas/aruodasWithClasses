@@ -36,7 +36,7 @@ public class PlotsTests {
     @Test
     public void test2(){
         Plot address = new Plot("Vilnius", "Vilniaus m.", "Antakalnis", "A. Goštauto g.",
-                "14","315616161594");
+                "14","3156161615v94");
         address.fillAd();
 
         HouseDetails house = new HouseDetails("69","1","5","1969","2000",
